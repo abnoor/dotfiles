@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Load resources
+
+xrdb -merge .Xresources
+
+# Set up an icon tray
+#stalonetray &
+
+# Fire up apps
+
+#start keyring daemon
+eval $(gnome-keyring-daemon -s)
+export GNOME_KEYRING_CONTROL
+export SSH_AUTH_SOCK
+
+#volume keys daemon
+xfce4-volumed &
+
+#enable power manager
+xfce4-power-manager &
+
+#notifications
+dunst &
+
+#start screensaver
+xscreensaver -no-splash &
+
+# Set background image with feh
+feh --bg-scale /home/abdi/images/wallpapers/8-bit_day/7_late_evening.png &
+
+
+if [ -x /usr/bin/nm-applet ] ; then
+   nm-applet --sm-disable &
+fi
+
+#start dropbox daemon
+(sleep 60s && ~/.dropbox-dist/dropboxd) &
+
+exec xmonad
