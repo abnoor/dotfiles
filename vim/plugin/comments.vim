@@ -116,9 +116,9 @@ function! CommentLine()
   " for .vim files use "
   elseif file_name =~ '\.vim$' || file_name =~ '\.vimrc$'
 	 execute ":silent! normal ^i\"\<ESC>\<down>^"
-  " for .sql files use --
+  " for .sql files use #
   elseif file_name =~ '\.sql$'
-    execute ":silent! normal ^i--\<ESC>\<down>^"
+    execute ":silent! normal ^i#\<ESC>\<down>^"
   " for .ksh or .sh or .csh or .pl or .pm files use #
   elseif file_name =~ '\.[kc]\?sh$' || file_name =~ '\.pl$' || file_name =~ '\.pm$'
     execute ":silent! normal ^i#\<ESC>\<down>^"
@@ -147,9 +147,9 @@ function! UnCommentLine()
   " for .vim files use "
   elseif file_name =~ '\.vim$' || file_name =~ '\.vimrc$'
     execute ":silent! normal :nohlsearch\<CR>:s/\\\"//\<CR>:nohlsearch\<CR>"
-  " for .sql files use --
+  " for .sql files use #
   elseif file_name =~ '\.sql$'
-    execute ":silent! normal :nohlsearch\<CR>:s/\\-\\-//\<CR>:nohlsearch\<CR>"
+    execute ":silent! normal :nohlsearch\<CR>:s/\\#//\<CR>:nohlsearch\<CR>"
   " for .ksh or .sh or .csh or .pl or .pm files use #
   elseif file_name =~ '\.[kc]\?sh$' || file_name =~ '\.pl$' || file_name =~ '\.pm$'
     execute ":silent! normal :nohlsearch\<CR>:s/\\#//\<CR>:nohlsearch\<CR>"
@@ -207,9 +207,9 @@ function! RangeCommentLine()
   " for .vim files use --
   elseif file_name =~ '\.vim$' || file_name =~ '\.vimrc$'
     execute ":silent! normal :s/\\S/\\\"\\0/\<CR>:nohlsearch<CR>"
-  " for .sql files use --
+  " for .sql files use # 
   elseif file_name =~ '\.sql$'
-    execute ":silent! normal :s/\\S/\\-\\-\\0/\<CR>:nohlsearch<CR>"
+    execute ":silent! normal :s/\\S/\\#\\0/\<CR>:nohlsearch<CR>"
   " for .ksh or .sh or .csh or .pl or .pm files use #
   elseif file_name =~ '\.[kc]\?sh$' || file_name =~ '\.pl$' || file_name =~ '\.pm$'
     execute ":silent! normal :s/\\S/\\#\\0/\<CR>:nohlsearch<CR>"
@@ -238,9 +238,9 @@ function! RangeUnCommentLine()
   " for .vim files use " 
   elseif file_name =~ '\.vim$' || file_name =~ '\.vimrc$'
     execute ":silent! normal :s/\\\"//\<CR>:nohlsearch\<CR>"
-  " for .sql files use -- 
+  " for .sql files use #
   elseif file_name =~ '\.sql$'
-    execute ":silent! normal :s/\\-\\-//\<CR>:nohlsearch\<CR>"
+    execute ":silent! normal :s/\\#//\<CR>:nohlsearch\<CR>"
   " for .xml .html .xhtml .htm use <!-- -->
   elseif file_name =~ '\.html$' || file_name =~ '\.htm$' || file_name =~ '\.xml$' || file_name =~ '\.xhtml$' 
     execute ":silent! normal :nohlsearch\<CR>:s/<!--//\<CR>=="
