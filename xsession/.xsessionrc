@@ -1,0 +1,27 @@
+#Enable Trackpoint wheel emulation
+
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+
+#Disable the trackpad
+
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 0
+
+#remap capslot to escape
+
+# setxkbmap -option 'caps:escape'
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape'
+
+#fonts
+
+xset +fp /usr/share/fonts/envypn
+xset fp rehash
+
+#lock screen when laptop suspends https://wiki.debian.org/SystemdSuspendSedation
+
+#xscreensaver &
+#xss-lock -- xscreensaver-command --lock &
+

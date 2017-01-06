@@ -1,0 +1,7 @@
+# Copy this file to /usr/share/xessions/
+[Desktop Entry]
+Name=XMonad
+Comment=Lightweight tiling window manager
+Exec=.xmonad/xmonad.start
+Icon=xmonad.png
+Type=XSession
