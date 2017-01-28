@@ -8,6 +8,9 @@ import System.IO
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 
+-- The command to use as a launcher, to launch commands that don't have
+-- preset keybindings.
+
 -- Define workspaces
 myWorkspaces = ["1:main", "2:code", "3:web", "4:media", "5:comms", "6:prod", "7:misc"]
 
@@ -28,6 +31,7 @@ main = do
         , handleEventHook = fullscreenEventHook -- Allow apps to go fullscreen
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
-        , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
+        , ((ccontrolMask, xK_Print), spawn "sleep 0.2; scrot -s")
+        , ((modMask, xK_p ), spawn "$(yeganesh -x)")
         , ((0, xK_Print), spawn "scrot")
         ]

@@ -68,9 +68,6 @@ alias shell='$SHELL'
 
 alias dv2ps='dvips -Ppdf'
 
-alias dualscreens=' source ~/bin/dual_hdmiprimary.sh'
-alias laptopscreen=' source ~/bin/laptop_only.sh'
-
 alias screens_off=' xset s off'
 alias screens_on=' xset s on'
 

@@ -7,4 +7,4 @@
 # gnome-terminal --geometry=80x40 --disable-factory -e "vim $*"
 
 # use xterm
-terminator -e vim $*
+terminator -e vim -f 

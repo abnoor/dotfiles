@@ -1,6 +1,7 @@
 [global]
     #font = Envypn 10
-    font = envypn 10
+    #font = envypn 10
+    font = -*-terminus-*-r-normal-*-16-120-*-*-*-*-iso8859-* 
     # allow a small subset of html markup:
     # <b>bold</b>
     # <i>italic</i>

@@ -17,7 +17,8 @@ xcape -e 'Caps_Lock=Escape'
 
 #fonts
 
-xset +fp /usr/share/fonts/envypn
+xset +fp /usr/share/fonts/bitmap/envypn-font
+xset +fp /usr/share/fonts/bitmap/terminus-font-4.39
 xset fp rehash
 
 #lock screen when laptop suspends https://wiki.debian.org/SystemdSuspendSedation
