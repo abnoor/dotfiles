@@ -19,6 +19,3 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule "vim/.vim/bundle/jedi"]
-	path = vim/.vim/bundle/jedi
-	url = https://github.com/davidhalter/jedi-vim.git
