@@ -60,7 +60,7 @@ vnoremap <silent> gK :call RangeUnCommentLine()<CR>
 "map gK :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>
 "map gl 0i#<Esc>
 "vmap gl :s/^/#<CR>
-map gp :!python % <CR>
+map gp :!ipython % <CR>
 map gr :!./% <CR>
 map gX :!chmod +x % <CR>
 map gb :!open % <CR>
@@ -79,6 +79,16 @@ set tabstop=4
 set expandtab
 set shiftwidth=4 " or whatever
 set smarttab autoindent
+
+"arrangment of new splits
+set splitbelow
+set splitright
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "background tab
 map :bt :tab split<CR>gT :q<CR>
@@ -138,6 +148,7 @@ autocmd BufReadPost *.doc %!antiword "%"
 
 "switch on spellcheck for tex files
 autocmd FileType tex set spell spelllang=en_gb
+autocmd FileType txt set spell spelllang=en_gb
 
 
 "set latex filetype
@@ -186,6 +197,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pyflakes']
 "" Turn off syntastic for latex files.
 let g:syntastic_mode_map = {
         \ "mode": "active",
@@ -200,6 +212,7 @@ function FT_mail()
     set nocindent
     set noautoindent
     set textwidth=68
+    set nonumber
     " reformat for 72 char lines
     " normal gggqGgg
     " settings
@@ -209,4 +222,4 @@ function FT_mail()
     " abbreviations
     iabbr  gd Good Day!
 endfunction
-
+set clipboard=unnamed
