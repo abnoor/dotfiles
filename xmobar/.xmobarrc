@@ -25,7 +25,7 @@ commands = [
                "--low", "red"
                ] 10,
 
-              Run Wireless "wlan0"
+              Run Wireless "wlp2s0"
               ["-L","0","-H","32",
                "--normal","green","--high","red"
               ] 10,
@@ -63,7 +63,7 @@ commands = [
 
 sepChar = "%",
 alignSep = "}{",
-template = "%StdinReader%}{%battery% <fc=#8AB5E4></fc> <icon=/home/abdi/xbm/cpu.xbm/> %cpu% <fc=#8AB5E4></fc> <icon=/home/abdi/xbm/mem.xbm/> %memory% <fc=#8AB5E4></fc> %eth0%  %wlan0wi% <fc=#8AB5E4></fc> <icon=/home/abdi/temp.xpm/>%EGGP% <fc=#8AB5E4></fc>  <fc=#ee9a00>%date%</fc>"
+template = "%StdinReader%}{%battery% <fc=#8AB5E4></fc> <icon=/home/abdi/images/icons/cpu.xbm/> %cpu% <fc=#8AB5E4></fc> <icon=/home/abdi/images/icons/mem.xbm/> %memory% <fc=#8AB5E4></fc> %eth0%  %wlp2s0wi% <fc=#8AB5E4></fc> <icon=/home/abdi/images/icons/temp.xpm/>%EGGP% <fc=#8AB5E4></fc>  <fc=#ee9a00>%date%</fc>"
 }
 
 
