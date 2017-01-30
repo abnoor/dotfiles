@@ -47,7 +47,7 @@ set wildmenu
 set backspace=indent,eol,start
 set backup
 set history=50
-set showcmd
+set showcmd " Show command in staus line
 set incsearch
 set hlsearch
 set cursorline
@@ -141,19 +141,19 @@ vnoremap <silent> gK :call RangeUnCommentLine()<CR>
 "map gl 0i#<Esc>
 "vmap gl :s/^/#<CR>
 
-"map gp :!python % <CR>
-"map gr :!./% <CR>
-"map gX :!chmod +x % <CR>
-"map gb :!open % <CR>
-"map :Q :q
-"map :WQ :wq
-"map :Spell :setlocal spell spelllang=en_gb <CR>
-"vmap g# :s/^/#/ <CR>
-"vmap g* :s/^#// <CR>
+map gp :!python % <CR>
+map gr :!./% <CR>
+map gX :!chmod +x % <CR>
+map gb :!open % <CR>
+map :Q :q
+map :WQ :wq
+map :Spell :setlocal spell spelllang=en_gb <CR>
+vmap g# :s/^/#/ <CR>
+vmap g* :s/^#// <CR>
 
 " taglist
-"let Tlist_Exit_OnlyWindow = 1
-"map gt :TlistToggle <CR>
+let Tlist_Exit_OnlyWindow = 1
+map gt :TlistToggle <CR>
 
 " highlighting for opts files
 au BufRead,BufNewFile *.opts setlocal filetype=cpp
@@ -173,6 +173,17 @@ autocmd FileType txt set spell spelllang=en_gb
 
 "git
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+"python 
+autocmd BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
 
 "Writing thunderbird emails in vim
 au FileType mail call FT_mail()
