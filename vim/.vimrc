@@ -81,7 +81,7 @@ set number
 nnoremap <F3> :set invnumber number?<CR>
 
 "Allow toggling of paste with F2 when in insert mode. 
-"nnoremap <F2> :set invpaste paste?<CR>
+nnoremap <F2> :set invpaste paste?<CR>
 "set pastetoggle=<F2>
 
 " switch between source and header files easily
@@ -141,19 +141,19 @@ vnoremap <silent> gK :call RangeUnCommentLine()<CR>
 "map gl 0i#<Esc>
 "vmap gl :s/^/#<CR>
 
-map gp :!python % <CR>
-map gr :!./% <CR>
-map gX :!chmod +x % <CR>
-map gb :!open % <CR>
-map :Q :q
-map :WQ :wq
-map :Spell :setlocal spell spelllang=en_gb <CR>
-vmap g# :s/^/#/ <CR>
-vmap g* :s/^#// <CR>
+"map gp :!python % <CR>
+"map gr :!./% <CR>
+"map gX :!chmod +x % <CR>
+"map gb :!open % <CR>
+"map :Q :q
+"map :WQ :wq
+"map :Spell :setlocal spell spelllang=en_gb <CR>
+"vmap g# :s/^/#/ <CR>
+"vmap g* :s/^#// <CR>
 
 " taglist
-let Tlist_Exit_OnlyWindow = 1
-map gt :TlistToggle <CR>
+"let Tlist_Exit_OnlyWindow = 1
+"map gt :TlistToggle <CR>
 
 " highlighting for opts files
 au BufRead,BufNewFile *.opts setlocal filetype=cpp
@@ -192,7 +192,18 @@ function FT_mail()
     iabbr  gd Good Day!
 endfunction
 
-"set clipboard=unnamed
+set clipboard=unnamed
+
+" Ctrl-Space for completions. This should work with jedi-vim by default but I
+" have somehow broken omnicomplete. ctr-space gives E29 no inserted text. Then
+" it will copy anything slected in visual mode and the enter normal mode. This
+" is a quick work around need to fix this.
+inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
+            \ "\<lt>C-n>" :
+            \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
+            \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
+            \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
+imap <C-@> <C-Space>
 
 ""PLUGINS""
 
@@ -225,7 +236,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['pyflakes']
 
 "" Turn off syntastic for latex files.
 let g:syntastic_mode_map = {
@@ -235,4 +246,6 @@ let g:syntastic_mode_map = {
 
 " jedi
 let g:jedi#completions_command = "<C-N>"
+" Similar to the ctr-space problem . is also broken due to my stupidy in
+" breaking omnicomplete, so have disabled it. 
 let g:jedi#popup_on_dot = 0
