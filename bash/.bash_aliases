@@ -77,3 +77,7 @@ alias conda_activate='source /home/abdi/anaconda2/bin/activate ~/anaconda2'
 alias conda_deactivate='source /home/abdi/anaconda2/bin/deactivate'
 
 alias poweroff='su -c "'"systemctl poweroff"'"'
+
+alias printhome='lpr -P DCP1610W'
+alias printcol='lpr -P mono'
+alias printninja='lpr -P HP_Officejet_Pro_X576dw_MFP'
