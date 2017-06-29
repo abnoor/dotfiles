@@ -11,13 +11,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Syntastic'
-Plugin 'tomtom/tComment'
 Plugin 'delimitMate.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'davidhalter/jedi-vim.git'
-Plugin 'indenthaskell.vim'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -62,7 +60,6 @@ set complete=.,w,b,u,t,i,k
 " tabstop
 set tabstop=4
 set expandtab
-set softtabstop=4
 set shiftwidth=4 " or whatever
 set smarttab autoindent
 
@@ -190,22 +187,22 @@ autocmd BufNewFile,BufRead *.py;
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "Writing thunderbird emails in vim
-" au FileType mail call FT_mail()
-"
-" function FT_mail()
-"     set nocindent
-"     set noautoindent
-"     set textwidth=68
-"     set nonumber
-"     " reformat for 72 char lines
-"     " normal gggqGgg
-"     " settings
-"     setlocal spell spelllang=en
-"     " setlocal fileencoding=iso8859-1,utf-8
-"     set fileencodings=iso8859-1,utf-8
-"     " abbreviations
-"     iabbr  gd Good Day!
-" endfunction
+au FileType mail call FT_mail()
+
+function FT_mail()
+    set nocindent
+    set noautoindent
+    set textwidth=68
+    set nonumber
+    " reformat for 72 char lines
+    " normal gggqGgg
+    " settings
+    setlocal spell spelllang=en
+    " setlocal fileencoding=iso8859-1,utf-8
+    set fileencodings=iso8859-1,utf-8
+    " abbreviations
+    iabbr  gd Good Day!
+endfunction
 
 set clipboard=unnamed
 
@@ -240,6 +237,7 @@ augroup FastEscape
   au InsertEnter * set timeoutlen=0
   au InsertLeave * set timeoutlen=1000
 augroup END
+
 
 "Syntastic with recommended settings from readme
 set statusline+=%#warningmsg#
