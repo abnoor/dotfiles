@@ -8,6 +8,10 @@ font = "envypn-13",
 bgColor = "#002B36",
 fgColor = "#EEE8D5",
 position = Top,
+persistent = True,
+hideOnStart = False,
+allDesktops = True,
+overrideRedirect = False,
 lowerOnStart = True,
 commands = [
                Run Weather "EGGP"
