@@ -1,14 +1,31 @@
 
-xmonad.hs:34:13: error:
-    • Variable not in scope: ccontrolMask :: ButtonMask
-    • Perhaps you meant ‘controlMask’ (imported from XMonad)
+xmonad.hs:22:22: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+   |
+22 |     xmonad $ docks $ defaultConfig { 
+   |                      ^^^^^^^^^^^^^
 
-xmonad.hs:35:13: error:
-    • Couldn't match type ‘XConfig l0 -> KeyMask’
-                     with ‘Foreign.C.Types.CUInt’
-      Expected type: ButtonMask
-        Actual type: XConfig l0 -> KeyMask
-    • Probable cause: ‘modMask’ is applied to too few arguments
-      In the expression: modMask
-      In the expression: (modMask, xK_p)
-      In the expression: ((modMask, xK_p), spawn "$(yeganesh -x)")
+xmonad.hs:24:51: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+   |
+24 |         , manageHook = manageDocks <+> manageHook defaultConfig
+   |                                                   ^^^^^^^^^^^^^
+
+xmonad.hs:25:66: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+   |
+25 |         , layoutHook = smartBorders $ avoidStruts  $  layoutHook defaultConfig
+   |                                                                  ^^^^^^^^^^^^^
+
+xmonad.hs:37:2: warning: [-Wtabs]
+    Tab character found here, and in one further location.
+    Please use spaces instead.
+   |
+37 |                 , ((mod4Mask, xK_p ), spawn myLauncher)
+   |  ^^^^^^^

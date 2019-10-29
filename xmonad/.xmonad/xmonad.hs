@@ -13,7 +13,7 @@ import XMonad.Layout.NoBorders
 -- preset keybindings.
 myLauncher = "$(yeganesh -x)"
 -- Define workspaces
-myWorkspaces = ["1:main", "2:code", "3:web", "4:media", "5:comms", "6:prod", "7:misc"]
+myWorkspaces = ["1", "2", "3", "4", "5", "6", "7"]
 
 -- Run xmonad
 main = do
