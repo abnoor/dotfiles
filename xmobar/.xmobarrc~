@@ -1,4 +1,4 @@
---vim:filetype=haskell
+vim:filetype=haskell
 
 Config{
 --font ="xft:Mono-11",
