@@ -119,3 +119,10 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 
+
+export NVM_DIR="/home/abdi/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

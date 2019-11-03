@@ -28,6 +28,7 @@ alias l.='ls -d .*'
 alias ll.='ls -dltrh .*'
 #list only directories
 alias ld='ls -d */'
+alias ld='ls -d */'
 ##cd##
 #get rid off error from mistyping
 alias cd..='cd ..'
@@ -76,6 +77,8 @@ alias jdownloader='./bin/jd2/JDownloader2'
 alias conda_activate='source /home/abdi/anaconda2/bin/activate ~/anaconda2'
 alias conda_deactivate='source /home/abdi/anaconda2/bin/deactivate'
 
+alias conda3_activate='source /home/abdi/anaconda3/bin/activate ~/anaconda3'
+alias conda3_deactivate='source /home/abdi/anaconda3/bin/deactivate'
 alias poweroff='su -c "'"systemctl poweroff"'"'
 
 alias printhome='lpr -P DCP1610W'
